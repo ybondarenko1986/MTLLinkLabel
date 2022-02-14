@@ -85,9 +85,10 @@ public extension LinkLabelDelegate {
             
         }
         else if result.resultType.contains(.phoneNumber) {
-            let telString = text
+            let telString = text.uppercased()
                 .replacingOccurrences(of: "(", with: "")
                 .replacingOccurrences(of: ") ", with: "-")
+                .components(separatedBy: " EXT")[0]
 
             guard let telURL = URL(string: "tel:" + telString) else { return }
             UIApplication.shared.open(telURL, options: [:], completionHandler: nil)
