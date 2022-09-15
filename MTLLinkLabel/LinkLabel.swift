@@ -406,7 +406,8 @@ public class LinkLabel: UILabel {
     }
     
     private func makeTextView() -> UITextView {
-        let textView = self.textView ?? UITextView(frame: self.bounds, textContainer: NSTextContainer(size: self.frame.size))
+        //let textView = self.textView ?? UITextView(frame: self.bounds, textContainer: NSTextContainer(size: self.frame.size))
+        let textView = self.textView ?? UITextView(frame: self.bounds)
         textView.isEditable = true
         textView.isSelectable = true
         textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
